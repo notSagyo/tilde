@@ -623,11 +623,13 @@
     text-decoration: none;
   }
 
-  .command:hover {
+  .command:hover,
+  .command:focus-visible {
     opacity: 1;
   }
 
-  .command:hover .command-key {
+  .command:hover .command-key,
+  .command:focus-visible .command-key {
     background: transparent;
   }
 
@@ -847,7 +849,8 @@
             ${acc}
             <style>
               .command-key-${i},
-              .command-${i}:hover {
+              .command-${i}:hover,
+              .command-${i}:focus-visible {
                 background: ${color};
                 color: var(--command-color-complementary);
               }
