@@ -705,7 +705,7 @@
   }
 </style>
 
-<div class="center">
+<div id="clock-center" class="center">
   <time class="clock" id="clock" />
 </div>
 <form
@@ -780,13 +780,14 @@
   class Clock {
     constructor(options) {
       this._el = $.el('#clock');
+      this._center = $.el('#clock-center')
       this._amPm = options.amPm;
       this._delimiter = options.delimiter;
       this._showSeconds = options.showSeconds;
       this._timeZone = options.timeZone;
       this._twentyFourHour = options.twentyFourHour;
       this._setTime = this._setTime.bind(this);
-      this._el.addEventListener('click', options.onClick);
+      this._center.addEventListener('click', options.onClick);
       this._start();
     }
 
